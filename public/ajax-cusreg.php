@@ -26,31 +26,7 @@
             $new = date('l, F d, Y', strtotime($Today));
           
          $reg = mysqli_query($conn, "INSERT INTO user (name, email, password, biz_cate, biz_offer, biz_stage, gender, biz_addr, biz_det, web, phone, date) VALUES ('$name', '$email', '$password', '$biz_cate', '$biz_cate',  '$biz_offer', '$gender', '$biz_addr', '$biz_det', '$web', '$phone', '$new')") or die(mysql_error());
-         
-        $to = "$email";
-       	$subject = "DoNotReply - Registeration Confirmation From Bizallianz";
-       	$text = " 
-        Your registeraion was successful. 
 
-       	Click the Link Below to Activate your email account
-
-       	===================================================
-
-       	http://bizallianz.com?email=$email
-
-       	===================================================	
-
-
-
-       	If you did not request for this mail, please disregard it.
-
-       	Bizallianz Team
-
-       	";
-
-       	$header = "From: BizAllianz". "\r\n" . "CC: info@bizzallianz.com";
-
-       	mail($to,$subject,$text,$header);
 
 
          
